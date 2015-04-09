@@ -5,7 +5,7 @@
     "url": "https://transloadit.com/"
   },
   "name": "ajson",
-  "description": "Asynchronous versions of JSON.parse and JSON.stringofy to not block the event loop",
+  "description": "Asynchronous versions of JSON.parse and JSON.stringify to not block the event loop",
   "homepage": "https://github.com/tim-kos/ajson",
   "repository": {
     "type": "git",

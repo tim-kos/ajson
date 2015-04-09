@@ -16,9 +16,18 @@ or
 
 # Execution
 
+```
+var AJSON = require('ajson');
 
+AJSON.parse("some_json_string", function(err, parsedData) {
+  console.log(parsedData);
+});
+
+AJSON.stringify(someJsonObject, function(err, stringified) {
+  console.log(stringified);
+});
+```
 
 # TODO
 
 - [ ] write benchmarks
-- [ ] finish readme
