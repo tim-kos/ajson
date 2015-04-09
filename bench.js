@@ -101,6 +101,10 @@ function testAjsonStringify(cb) {
   );
 }
 
+function loopBlock() {
+  return (loopBlockedFor / 1000) + 's event loop blocked';
+}
+
 async.series(
   [
     function(callback) {
@@ -110,7 +114,7 @@ async.series(
           throw err;
         }
 
-        console.log(howMany + ' JSON.parse()s in ' + seconds + 's, ' + (loopBlockedFor / 1000) + 's event loop blocked');
+        console.log(howMany + ' JSON.parse()s in ' + seconds + 's, ' + loopBlock());
         callback();
       });
     },
@@ -121,7 +125,7 @@ async.series(
           throw err;
         }
 
-        console.log(howMany + ' AJSON.parse()s in ' + seconds + 's, ' + (loopBlockedFor / 1000) + 's event loop blocked');
+        console.log(howMany + ' AJSON.parse()s in ' + seconds + 's, ' + loopBlock());
         callback();
       });
     },
@@ -132,7 +136,7 @@ async.series(
           throw err;
         }
 
-        console.log(howMany + ' JSON.stringify()s in ' + seconds + 's, ' + (loopBlockedFor / 1000) + 's event loop blocked');
+        console.log(howMany + ' JSON.stringify()s in ' + seconds + 's, ' + loopBlock());
         callback();
       });
     },
@@ -143,7 +147,7 @@ async.series(
           throw err;
         }
 
-        console.log(howMany + ' AJSON.stringify()s in ' + seconds + 's, ' + (loopBlockedFor / 1000) + 's event loop blocked');
+        console.log(howMany + ' AJSON.stringify()s in ' + seconds + 's, ' + loopBlock());
         callback();
       });
     },
