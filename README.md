@@ -20,4 +20,4 @@ or
 
 # TODO
 
-- [] Write some tests
+- [] Implement async version for JSON.parse
