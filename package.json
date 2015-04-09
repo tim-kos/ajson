@@ -14,7 +14,9 @@
   "version": "0.1.0",
   "main": "./index.js",
   "dependencies": {
-    "async-json": "0.0.2"
+    "async-json": "0.0.2",
+    "resumer": "0.0.0",
+    "event-stream": "3.3.0"
   },
   "devDependencies": {
     "coffee-script": "1.7.1",

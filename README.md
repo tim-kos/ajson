@@ -20,4 +20,5 @@ or
 
 # TODO
 
-- [] Implement async version for JSON.parse
+- [ ] write benchmarks
+- [ ] finish readme

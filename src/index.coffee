@@ -1,4 +1,6 @@
 asyncJSON = require "async-json"
+resumer   = require "resumer"
+es        = require "event-stream"
 
 class AJSON
   @stringify: (data, cb) ->
@@ -6,12 +8,18 @@ class AJSON
       cb err, result
 
   @parse: (s, cb) ->
-    try
-      result = JSON.parse s
-    catch e
-      err = new Error "Invalid JSON string provided"
-      return cb err, null
+    stream = resumer()
+    stream.queue s
 
-    cb null, result
+    stream.pipe es.parse({error: true})
+
+    .on "error", (theErr) ->
+      err = new Error "Invalid JSON string provided"
+      cb err, null
+
+    .pipe(es.map((data, callback) ->
+      callback null, data
+      cb null, data
+    ))
 
 module.exports = AJSON

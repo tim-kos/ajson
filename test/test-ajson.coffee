@@ -1,4 +1,5 @@
 AJSON  = require "../lib/"
+fs     = require "fs"
 should = require("chai").should()
 expect = require("chai").expect
 
@@ -53,6 +54,17 @@ describe "AJSON", ->
         expect(stringified).to.eql expected
 
         done()
+
+    it "should parse a big JSON", (done) ->
+      filePath = "./fixture/huge_string.json"
+      fs.readFile filePath, {encoding: "utf-8"}, (err, data) ->
+        expected = JSON.parse data
+
+        AJSON.parse data, (err, stringified) ->
+          expect(err).to.equal null
+          expect(stringified).to.eql expected
+
+          done()
 
     it "should throw an error for invalid JSON strings", (done) ->
       data = "{\"a\":\"b\",\"c\":}"
