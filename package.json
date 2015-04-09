@@ -1,0 +1,31 @@
+{
+  "author": {
+    "name": "Tim Koschützki",
+    "email": "tim@transloadit.com",
+    "url": "https://transloadit.com/"
+  },
+  "name": "ajson",
+  "description": "Asynchronous versions of JSON.parse and JSON.stringofy to not block the event loop",
+  "homepage": "https://github.com/tim-kos/ajson",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tim-kos/ajson"
+  },
+  "version": "0.0.1",
+  "main": "./index.js",
+  "dependencies": {
+    "async-json": "0.0.2"
+  },
+  "devDependencies": {
+    "coffee-script": "1.7.1",
+    "chai": "1.9.1",
+    "coffeelint": "1.3.0",
+    "mocha": "1.18.2"
+  },
+  "engines": {
+    "node": ">= 0.8"
+  },
+  "bugs": {
+    "url": "https://github.com/tim-kos/ajson/issues"
+  }
+}

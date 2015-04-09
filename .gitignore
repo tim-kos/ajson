@@ -1,0 +1,9 @@
+.vagrant
+.bzr
+
+/node_modules
+
+/env.sh
+
+npm-debug.log
+.DS_Store
