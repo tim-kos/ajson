@@ -30,4 +30,4 @@ AJSON.stringify(someJsonObject, function(err, stringified) {
 
 # TODO
 
-- [ ] write benchmarks
+- [ ] include a giant.json file
