@@ -4,6 +4,8 @@ AJSON
 Gives you asynchronous versions of JSON.parse and JSON.stringify to prevent
 blocking the event loop too much when you parse and stringify big amounts of data.
 
+Do not yet use AJSON.parse(), as it has a much higher memory footprint than JSON.parse().
+The implementation for it will be changed.
 
 # Installation
 

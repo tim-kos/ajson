@@ -101,6 +101,11 @@ function testAjsonStringify(cb) {
   );
 }
 
+function memory() {
+  var result = parseFloat((process.memoryUsage().rss / 1024 / 1024).toFixed(2));
+  return result + 'MB';
+}
+
 function loopBlock() {
   return (loopBlockedFor / 1000) + 's event loop blocked';
 }
@@ -109,45 +114,57 @@ async.series(
   [
     function(callback) {
       console.log('Running JSON.parse benchmark');
+      console.log('Memory before:', memory());
       testJsonParse(function(err, howMany) {
         if (err) {
           throw err;
         }
 
         console.log(howMany + ' JSON.parse()s in ' + seconds + 's, ' + loopBlock());
+        console.log('Memory after:', memory());
+        console.log('--------');
         callback();
       });
     },
     function(callback) {
       console.log('Running AJSON.parse benchmark');
+      console.log('Memory before:', memory());
       testAjsonParse(function(err, howMany) {
         if (err) {
           throw err;
         }
 
         console.log(howMany + ' AJSON.parse()s in ' + seconds + 's, ' + loopBlock());
+        console.log('Memory after:', memory());
+        console.log('--------');
         callback();
       });
     },
     function(callback) {
       console.log('Running JSON.stringify benchmark');
+      console.log('Memory before:', memory());
       testJsonStringify(function(err, howMany) {
         if (err) {
           throw err;
         }
 
         console.log(howMany + ' JSON.stringify()s in ' + seconds + 's, ' + loopBlock());
+        console.log('Memory after:', memory());
+        console.log('--------');
         callback();
       });
     },
     function(callback) {
       console.log('Running AJSON.stringify benchmark');
+      console.log('Memory before:', memory());
       testAjsonStringify(function(err, howMany) {
         if (err) {
           throw err;
         }
 
         console.log(howMany + ' AJSON.stringify()s in ' + seconds + 's, ' + loopBlock());
+        console.log('Memory after:', memory());
+        console.log('--------');
         callback();
       });
     },
