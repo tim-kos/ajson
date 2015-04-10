@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/tim-kos/ajson"
   },
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "./index.js",
   "dependencies": {
     "async-json": "git://github.com/tim-kos/async-json.git#4aab59ee4d842fcfe8958a10f128566a9c1f14a4",
