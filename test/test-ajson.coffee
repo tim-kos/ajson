@@ -40,6 +40,20 @@ describe "AJSON", ->
 
         done()
 
+    it "should be able to stringify a giant object", (done) ->
+      @timeout 5000
+
+      fs.readFile "./fixture/giant.json", (err, data) ->
+        parsed = JSON.parse data
+
+        AJSON.stringify parsed, (err, stringified) ->
+          if err
+            throw err
+
+          console.error err
+          expect(err).to.equal null
+          done()
+
 
   describe "parse", ->
     it "should parse a valid JSON object", (done) ->

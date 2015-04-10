@@ -14,7 +14,7 @@
   "version": "0.3.0",
   "main": "./index.js",
   "dependencies": {
-    "async-json": "0.0.2",
+    "async-json": "git://github.com/tim-kos/async-json.git#4aab59ee4d842fcfe8958a10f128566a9c1f14a4",
     "resumer": "0.0.0",
     "event-stream": "3.3.0",
     "async": "0.9.0",
