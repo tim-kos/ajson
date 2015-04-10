@@ -7,7 +7,7 @@ blocked(function(ms) {
   loopBlockedFor += ms;
 });
 
-var timePerTest = 1 * 1000;
+var timePerTest = 10 * 1000;
 var seconds     = (timePerTest / 1000);
 
 var dataToParse     = "{\"a\":\"b\",\"c\":\"d\"}";
