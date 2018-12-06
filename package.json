@@ -16,7 +16,7 @@
   "dependencies": {
     "async-json": "git://github.com/ckknight/async-json.git#145bb94b4496e5150c453a9e2e14610f93b0e16f",
     "resumer": "0.0.0",
-    "event-stream": "3.3.0",
+    "event-stream": "4.0.1",
     "async": "0.9.0",
     "blocked": "1.1.0"
   },
